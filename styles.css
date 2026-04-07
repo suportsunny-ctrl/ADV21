@@ -1,644 +1,226 @@
-css
-/*
-VARIÁVEIS CSS - CORES PRETAS E DOURADAS
-/
-:root {
---primary-color: #1a1a1a; / Preto Principal /
---gold: #D4AF37; / Dourado /
---light-bg: #2a2a2a; / Cinza Escuro para fundos /
---white: #FFFFFF; / Branco /
---gray-text: #b0b0b0; / Texto cinza claro /
---border-color: #444444; / Borda escura /
---shadow: 0 4px 15px rgba(0, 0, 0, 0.3); / Sombra mais escura /
---shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.5); / Sombra grande /
---transition: all 0.3s ease; / Transições suaves */
-}/*
-RESET E ESTILOS GLOBAIS
-*/
-{
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-}
-html {
-scroll-behavior: smooth;
-}body {
-font-family: 'Roboto', sans-serif; /* Fonte para o corpo */
-color: var(--white);
-background-color: var(--primary-color);
-line-height: 1.7;
-}h1, h2, h3, h4, h5, h6 {
-font-family: 'Playfair Display', serif; /* Fonte para títulos */
-color: var(--gold);
-line-height: 1.2;
-}.container {
-max-width: 1200px;
-margin: 0 auto;
-padding: 0 25px;
-}section {
-padding: 100px 0;
-position: relative;
-overflow: hidden;
-}/*
-BOTÕES GLOBAIS
-*/
-.btn-primary, .btn-secondary {
-display: inline-flex;
-align-items: center;
-gap: 0.75rem;
-padding: 1rem 2.2rem;
-border-radius: 50px;
-font-weight: 700;
-font-size: 1rem;
-text-decoration: none;
-transition: var(--transition);
-border: none;
-cursor: pointer;
-text-align: center;
-justify-content: center;
-}.btn-primary {
-background: var(--gold);
-color: var(--primary-color);
-}.btn-primary:hover {
-background: #c29b2c; /* Dourado um pouco mais escuro */
-transform: translateY(-3px);
-box-shadow: var(--shadow-lg);
-}.btn-secondary {
-background: transparent;
-color: var(--gold);
-border: 2px solid var(--gold);
-}.btn-secondary:hover {
-background: var(--gold);
-color: var(--primary-color);
-transform: translateY(-3px);
-box-shadow: var(--shadow-lg);
-}/*
-HEADER / NAVBAR
-*/
-.header {
-background: var(--primary-color);
-box-shadow: var(--shadow);
-position: sticky;
-top: 0;
-z-index: 1000;
-border-bottom: 1px solid var(--border-color);
-}.navbar {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 1rem 0;
-}.logo img {
-height: 50px; /* Ajuste conforme o tamanho da sua logo */
-width: auto;
-transition: var(--transition);
-}.logo img:hover {
-transform: scale(1.05);
-}.nav-menu {
-display: flex;
-list-style: none;
-gap: 2.5rem;
-}.nav-link {
-color: var(--white);
-text-decoration: none;
-font-weight: 500;
-transition: var(--transition);
-position: relative;
-padding: 5px 0;
-}.nav-link:hover {
-color: var(--gold);
-}.nav-link::after {
-content: '';
-position: absolute;
-bottom: 0;
-left: 0;
-width: 0;
-height: 2px;
-background: var(--gold);
-transition: var(--transition);
-}.nav-link:hover::after {
-width: 100%;
-}.btn-whatsapp {
-background: #25d366; /* Verde WhatsApp */
-color: white;
-padding: 0.75rem 1.5rem;
-border-radius: 50px;
-font-weight: 600;
-text-decoration: none;
-display: flex;
-align-items: center;
-gap: 0.5rem;
-transition: var(--transition);
-}.btn-whatsapp:hover {
-background: #1fa857;
-transform: translateY(-2px);
-box-shadow: var(--shadow-lg);
-}.hamburger {
-display: none;
-flex-direction: column;
-cursor: pointer;
-gap: 6px;
-}.hamburger span {
-width: 30px;
-height: 3px;
-background: var(--gold);
-border-radius: 3px;
-transition: var(--transition);
-}/*
-HERO SECTION
-*/
-.hero {
-background: linear-gradient(135deg, var(--primary-color) 0%, #000000 100%);
-padding: 150px 0;
-text-align: center;
-position: relative;
-overflow: hidden;
-}.hero::before { /* Efeito de fundo sutil */
-content: '';
-position: absolute;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-background: url('data:image/svg+xml,');
-opacity: 0.8;
-z-index: 1;
-}.hero-content {
-position: relative;
-z-index: 2;
-max-width: 900px;
-margin: 0 auto;
-}.hero-badge {
-display: inline-block;
-background: rgba(212, 175, 55, 0.15); /* Dourado transparente */
-color: var(--gold);
-padding: 0.8rem 1.8rem;
-border-radius: 50px;
-font-size: 0.95rem;
-font-weight: 600;
-margin-bottom: 1.5rem;
-border: 1px solid var(--gold);
-animation: fadeIn 0.8s ease-out;
-}.hero-content h1 {
-font-size: 4.2rem;
-font-weight: 700;
-margin-bottom: 1.5rem;
-color: var(--white); /* Título principal branco para contraste */
-animation: slideUp 0.8s ease-out 0.2s both;
-}.hero-content h1 strong {
-color: var(--gold);
-}.hero-description {
-font-size: 1.2rem;
-color: var(--gray-text);
-margin-bottom: 3rem;
-max-width: 700px;
-margin-left: auto;
-margin-right: auto;
-animation: slideUp 0.8s ease-out 0.4s both;
-}.hero-buttons {
-display: flex;
-gap: 1.5rem;
-justify-content: center;
-margin-bottom: 4rem;
-flex-wrap: wrap;
-animation: slideUp 0.8s ease-out 0.6s both;
-}.hero-stats {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-gap: 2.5rem;
-margin-top: 5rem;
-animation: slideUp 0.8s ease-out 0.8s both;
-}.stat {
-background: rgba(212, 175, 55, 0.08); /* Dourado muito transparente */
-padding: 2rem;
-border-radius: 15px;
-border: 1px solid rgba(212, 175, 55, 0.2);
-box-shadow: var(--shadow);
-}.stat-number {
-display: block;
-font-size: 3.2rem;
-font-weight: 700;
-color: var(--gold);
-margin-bottom: 0.5rem;
-font-family: 'Playfair Display', serif;
-}.stat-plus {
-font-size: 1.8rem;
-font-weight: 600;
-color: var(--gold);
-}.stat-label {
-display: block;
-font-size: 1rem;
-color: var(--gray-text);
-text-transform: uppercase;
-letter-spacing: 1px;
-}/*
-SOBRE SECTION
-*/
-.sobre {
-background: var(--primary-color);
-border-top: 1px solid var(--border-color);
-border-bottom: 1px solid var(--border-color);
-}.sobre-content {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 4rem;
-align-items: center;
-}.sobre-text h2 {
-font-size: 3rem;
-margin-bottom: 1rem;
-color: var(--gold);
-}.sobre-text h3 {
-font-size: 1.8rem;
-margin-bottom: 2rem;
-color: var(--white);
-}.sobre-text p {
-color: var(--gray-text);
-margin-bottom: 1.5rem;
-font-size: 1.05rem;
-}.sobre-list {
-list-style: none;
-margin-top: 2rem;
-}.sobre-list li {
-display: flex;
-align-items: center;
-gap: 1rem;
-margin-bottom: 1rem;
-color: var(--white);
-font-weight: 400;
-font-size: 1.05rem;
-}.sobre-list i {
-color: var(--gold);
-font-size: 1.3rem;
-}.placeholder-image {
-background: linear-gradient(135deg, var(--gold), var(--primary-color));
-border-radius: 15px;
-height: 450px;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-color: var(--white);
-text-align: center;
-box-shadow: var(--shadow-lg);
-border: 2px solid var(--gold);
-}.placeholder-image i {
-font-size: 6rem;
-margin-bottom: 1rem;
-opacity: 0.8;
-}.placeholder-image p {
-font-size: 1.2rem;
-opacity: 0.9;
-font-family: 'Playfair Display', serif;
-}/*
-CONSULTAS ONLINE SECTION
-*/
-.consultas-online {
-background: var(--light-bg);
-text-align: center;
-padding: 80px 0;
-border-bottom: 1px solid var(--border-color);
-}.consultas-online h2 {
-font-size: 3rem;
-margin-bottom: 1.5rem;
-color: var(--gold);
-}.consultas-online p {
-font-size: 1.15rem;
-color: var(--gray-text);
-margin-bottom: 3rem;
-max-width: 800px;
-margin-left: auto;
-margin-right: auto;
-}/*
-ÁREAS DE ATUAÇÃO SECTION
-*/
-.areas {
-background: var(--primary-color);
-border-bottom: 1px solid var(--border-color);
-}.areas h2 {
-text-align: center;
-font-size: 3rem;
-margin-bottom: 4rem;
-color: var(--gold);
-}.areas-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-gap: 2.5rem;
-}.area-item {
-background: var(--light-bg);
-padding: 2.5rem;
-border-radius: 15px;
-text-align: center;
-box-shadow: var(--shadow);
-transition: var(--transition);
-border: 1px solid var(--border-color);
-}.area-item:hover {
-transform: translateY(-10px) scale(1.02);
-box-shadow: var(--shadow-lg);
-border-color: var(--gold);
-}.area-item i {
-font-size: 3.5rem;
-color: var(--gold);
-margin-bottom: 1.5rem;
-}.area-item h3 {
-font-size: 1.6rem;
-margin-bottom: 0.8rem;
-color: var(--white);
-}.area-item p {
-color: var(--gray-text);
-font-size: 1rem;
-}/*
-COMO FUNCIONA SECTION
-*/
-.como-funciona {
-background: var(--light-bg);
-border-bottom: 1px solid var(--border-color);
-}.como-funciona h2 {
-text-align: center;
-font-size: 3rem;
-margin-bottom: 4rem;
-color: var(--gold);
-}.passos-list {
-list-style: none;
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-gap: 3rem;
-}.passos-list li {
-background: var(--primary-color);
-padding: 2.5rem;
-border-radius: 15px;
-text-align: center;
-box-shadow: var(--shadow);
-border: 1px solid var(--border-color);
-transition: var(--transition);
-}.passos-list li:hover {
-transform: translateY(-8px);
-box-shadow: var(--shadow-lg);
-border-color: var(--gold);
-}.passo-icon {
-background: var(--gold);
-width: 70px;
-height: 70px;
-border-radius: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
-margin: 0 auto 1.5rem auto;
-box-shadow: var(--shadow);
-}.passo-icon i {
-font-size: 2.5rem;
-color: var(--primary-color);
-}.passos-list h3 {
-font-size: 1.6rem;
-margin-bottom: 0.8rem;
-color: var(--white);
-}.passos-list p {
-color: var(--gray-text);
-font-size: 1rem;
-}/*
-CONTATO SECTION
-*/
-.contato {
-background: var(--primary-color);
-}.contato h2 {
-text-align: center;
-font-size: 3rem;
-margin-bottom: 4rem;
-color: var(--gold);
-}.contato-content {
-display: grid;
-grid-template-columns: 1fr 1.2fr; /* Info à esquerda, CTA à direita */
-gap: 4rem;
-align-items: center;
-}.contato-info {
-display: flex;
-flex-direction: column;
-gap: 2.5rem;
-}.info-item {
-display: flex;
-gap: 1.5rem;
-align-items: flex-start;
-background: var(--light-bg);
-padding: 1.8rem;
-border-radius: 10px;
-border: 1px solid var(--border-color);
-box-shadow: var(--shadow);
-transition: var(--transition);
-}.info-item:hover {
-transform: translateX(5px);
-border-color: var(--gold);
-}.info-item i {
-font-size: 2.5rem;
-color: var(--gold);
-margin-top: 0.3rem;
-}.info-item h3 {
-font-size: 1.4rem;
-color: var(--white);
-margin-bottom: 0.5rem;
-}.info-item p {
-color: var(--gray-text);
-font-size: 1rem;
-}.link-contato {
-color: var(--gold);
-text-decoration: none;
-font-weight: 500;
-margin-top: 0.5rem;
-display: inline-block;
-transition: var(--transition);
-}.link-contato:hover {
-text-decoration: underline;
-color: var(--white);
-}.contato-cta {
-background: linear-gradient(135deg, var(--gold), #c29b2c); /* Gradiente dourado /
-padding: 3.5rem;
-border-radius: 15px;
-color: var(--primary-color); / Texto preto sobre dourado */
-text-align: center;
-box-shadow: var(--shadow-lg);
-border: 2px solid var(--white);
-}.contato-cta h3 {
-font-size: 2.2rem;
-margin-bottom: 1.5rem;
-color: var(--primary-color);
-}.contato-cta p {
-margin-bottom: 2.5rem;
-font-size: 1.1rem;
-color: #333333; /* Cinza escuro para contraste */
-}.contato-cta .btn-primary {
-background: var(--primary-color);
-color: var(--gold);
-border: 2px solid var(--gold);
-}.contato-cta .btn-primary:hover {
-background: #000000;
-color: var(--white);
-border-color: var(--white);
-}/*
-FOOTER
-/
-.footer {
-background: #000000; / Preto absoluto */
-color: var(--gray-text);
-text-align: center;
-padding: 2.5rem;
-border-top: 1px solid var(--border-color);
-font-size: 0.9rem;
-}.footer p {
-margin: 0.6rem 0;
-}/*
-ANIMAÇÕES
-*/
-@keyframes fadeIn {
-from { opacity: 0; }
-to { opacity: 1; }
-}@keyframes slideUp {
-from { opacity: 0; transform: translateY(20px); }
-to { opacity: 1; transform: translateY(0); }
-}/*
-RESPONSIVO
-/
-@media (max-width: 992px) {
-.navbar {
-padding: 1rem 25px;
-}
-.nav-menu {
-gap: 1.5rem;
-}
-.hero-content h1 {
-font-size: 3.5rem;
-}
-.sobre-content {
-grid-template-columns: 1fr;
-}
-.sobre-image {
-order: -1; / Imagem acima do texto no mobile */
-margin-bottom: 3rem;
-}
-.placeholder-image {
-height: 350px;
-}
-.contato-content {
-grid-template-columns: 1fr;
-}
-.contato-cta {
-padding: 2.5rem;
-}
-}@media (max-width: 768px) {
-.nav-menu {
-display: none;
-}.hamburger {
-    display: flex;
+// Criminal Law Website JavaScript
+// This script provides interactive functionalities for a criminal law website.
+// It includes mobile menu, smooth scrolling, animated counters, form validation, visual effects, and performance optimizations.
+// No external dependencies required.
+
+// Utility function for debouncing
+function debounce(func, wait) {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
 }
 
-.hamburger.active span:nth-child(1) {<br/>
-    transform: rotate(45deg) translate(8px, 8px);
-}
-.hamburger.active span:nth-child(2) {<br/>
-    opacity: 0;
-}
-.hamburger.active span:nth-child(3) {<br/>
-    transform: rotate(-45deg) translate(8px, -8px);
-}
+// Mobile Menu Functionality
+document.addEventListener('DOMContentLoaded', () => {
+  const hamburger = document.querySelector('.hamburger');
+  const navMenu = document.querySelector('.nav-menu');
+  const navLinks = document.querySelectorAll('.nav-link');
 
-.nav-menu.active {
-    display: flex;<br/>
-    flex-direction: column;<br/>
-    position: absolute;<br/>
-    top: 80px; /* Altura do header */<br/>
-    left: 0;<br/>
-    right: 0;<br/>
-    background: var(--primary-color);<br/>
-    padding: 2rem 25px;<br/>
-    box-shadow: var(--shadow-lg);<br/>
-    gap: 1.5rem;<br/>
-    border-top: 1px solid var(--border-color);
-}
-.nav-menu.active .nav-link {
-    font-size: 1.1rem;<br/>
-    text-align: center;
-}
-.nav-menu.active .nav-link::after {<br/>
-    left: 50%;<br/>
-    transform: translateX(-50%);
-}
+  if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
 
-.btn-whatsapp {
-    display: none; /* Esconde o botão do header no mobile, usa o do hero */
-}
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
+    });
+  }
 
-.hero {
-    padding: 120px 0 80px 0;
-}
-.hero-content h1 {
-    font-size: 2.8rem;
-}
-.hero-description {
-    font-size: 1rem;
-}
-.hero-buttons {
-    flex-direction: column;<br/>
-    gap: 1rem;
-}
-.btn-primary, .btn-secondary {
-    width: 100%;
-}
-.hero-stats {
-    grid-template-columns: 1fr;<br/>
-    gap: 1.5rem;
-}
+  // Smooth Scroll Functionality
+  const scrollToSection = (target) => {
+    const element = document.querySelector(target);
+    if (element) {
+      const headerOffset = 80; // Adjust for fixed header
+      const elementPosition = element.offsetTop;
+      const offsetPosition = elementPosition - headerOffset;
 
-section {
-    padding: 80px 0;
-}
-h2 {
-    font-size: 2.5rem;
-}
-.sobre-text h2 {
-    font-size: 2.5rem;
-}
-.sobre-text h3 {
-    font-size: 1.5rem;
-}
-.placeholder-image {
-    height: 300px;
-}
-.areas-grid, .passos-list {
-    grid-template-columns: 1fr;
-}
-.contato-cta h3 {
-    font-size: 1.8rem;
-}}@media (max-width: 480px) {
-.navbar {
-padding: 0.8rem 15px;
-}
-.logo img {
-height: 40px;
-}
-.hero-content h1 {
-font-size: 2.2rem;
-}
-.hero-badge {
-padding: 0.6rem 1.2rem;
-font-size: 0.85rem;
-}
-.stat-number {
-font-size: 2.5rem;
-}
-h2 {
-font-size: 2rem;
-}
-.sobre-text h2 {
-font-size: 2rem;
-}
-.sobre-text h3 {
-font-size: 1.3rem;
-}
-.placeholder-image {
-height: 250px;
-}
-.info-item {
-flex-direction: column;
-align-items: center;
-text-align: center;
-}
-.info-item i {
-margin-bottom: 0.5rem;
-}
-}
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = link.getAttribute('href');
+      scrollToSection(target);
+    });
+  });
+
+  // Animated Counter with Intersection Observer
+  const counters = document.querySelectorAll('.counter');
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const counter = entry.target;
+        const target = +counter.getAttribute('data-target');
+        const duration = 2000; // 2 seconds
+        const increment = target / (duration / 16); // 60fps
+        let current = 0;
+
+        const updateCounter = () => {
+          current += increment;
+          if (current < target) {
+            counter.innerText = Math.floor(current);
+            requestAnimationFrame(updateCounter);
+          } else {
+            counter.innerText = target;
+          }
+        };
+        updateCounter();
+        counterObserver.unobserve(counter);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(counter => counterObserver.observe(counter));
+
+  // Form Validation and WhatsApp Submission
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+
+      let isValid = true;
+      let errors = [];
+
+      // Validate required fields
+      if (!name) {
+        errors.push('Name is required');
+        isValid = false;
+      }
+      if (!email) {
+        errors.push('Email is required');
+        isValid = false;
+      } else if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
+        errors.push('Invalid email format');
+        isValid = false;
+      }
+      if (!message) {
+        errors.push('Message is required');
+        isValid = false;
+      }
+      if (!phone) {
+        errors.push('Phone is required');
+        isValid = false;
+      }
+
+      const errorContainer = document.getElementById('form-errors');
+      const successContainer = document.getElementById('form-success');
+
+      if (errorContainer) errorContainer.innerHTML = '';
+      if (successContainer) successContainer.innerHTML = '';
+
+      if (!isValid) {
+        if (errorContainer) {
+          errors.forEach(error => {
+            const li = document.createElement('li');
+            li.textContent = error;
+            errorContainer.appendChild(li);
+          });
+        }
+      } else {
+        // Send via WhatsApp
+        const whatsappNumber = '1234567890'; // Replace with actual number
+        const whatsappMessage = `Name: ${name}%0AEmail: ${email}%0APhone: ${phone}%0AMessage: ${message}`;
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+        window.open(whatsappURL, '_blank');
+
+        if (successContainer) {
+          successContainer.textContent = 'Message sent successfully!';
+        }
+        contactForm.reset();
+      }
+    });
+  }
+
+  // Visual Effects: Fade-in on Scroll
+  const fadeElements = document.querySelectorAll('.fade-in');
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        fadeObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  fadeElements.forEach(el => fadeObserver.observe(el));
+
+  // Optional Parallax Effect
+  const parallaxElements = document.querySelectorAll('.parallax');
+  const parallaxScroll = debounce(() => {
+    parallaxElements.forEach(el => {
+      const speed = el.getAttribute('data-speed') || 0.5;
+      const yPos = -(window.pageYOffset * speed);
+      el.style.transform = `translateY(${yPos}px)`;
+    });
+  }, 16);
+
+  window.addEventListener('scroll', parallaxScroll);
+
+  // Hover Effects on Cards
+  const cards = document.querySelectorAll('.card');
+  cards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      card.classList.add('hovered');
+    });
+    card.addEventListener('mouseleave', () => {
+      card.classList.remove('hovered');
+    });
+  });
+
+  // WhatsApp Link Click Detection
+  const whatsappLinks = document.querySelectorAll('a[href*="wa.me"]');
+  whatsappLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      // Basic analytics: log click
+      console.log('WhatsApp link clicked');
+      // You can integrate with Google Analytics or similar here
+    });
+  });
+
+  // Basic Analytics (placeholder)
+  // Track page views
+  console.log('Page loaded');
+
+  // Smooth Scroll Fallback for Older Browsers
+  if (!('scrollBehavior' in document.documentElement.style)) {
+    // Polyfill or fallback logic can be added here if needed
+    console.log('Smooth scroll not supported, using fallback');
+  }
+
+  // Lazy Loading Images
+  const lazyImages = document.querySelectorAll('img[data-src]');
+  const imageObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        img.src = img.getAttribute('data-src');
+        img.classList.remove('lazy');
+        imageObserver.unobserve(img);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  lazyImages.forEach(img => imageObserver.observe(img));
+
+  // Performance: Optimize listeners (already using debounce and unobserve)
+  // No additional optimizations needed as listeners are efficiently managed
+});
