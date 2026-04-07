@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Advocacia Criminal - Dra. Albertina Tibúrcio Mariano</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -13,155 +11,153 @@
             box-sizing: border-box;
         }
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Arial', sans-serif;
             color: #1a1a1a;
             background-color: #ffffff;
-            line-height: 1.6;
-        }
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
+            line-height: 1.9;
         }
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
+        section {
+            margin-bottom: 80px;
+            padding: 50px 30px;
+        }
+        h1, h2, h3 {
+            color: #D4AF37;
+        }
+        h2 {
+            margin-bottom: 40px;
+        }
+        h3 {
+            margin-bottom: 25px;
+        }
+        p {
+            margin-bottom: 25px;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #D4AF37;
+            color: #1a1a1a;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #b8941f;
+        }
         /* Header */
         header {
-            position: sticky;
-            top: 0;
             background-color: #1a1a1a;
+            color: #D4AF37;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 0;
         }
         .logo {
-            font-size: 2rem;
+            font-size: 1.5em;
             font-weight: bold;
-            color: #D4AF37;
-            background-color: #1a1a1a;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
         }
         .nav-links {
-            display: flex;
             list-style: none;
+            display: flex;
         }
         .nav-links li {
-            margin-left: 2rem;
+            margin-left: 30px;
         }
         .nav-links a {
-            color: #ffffff;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        .nav-links a:hover {
             color: #D4AF37;
+            text-decoration: none;
         }
         .hamburger {
             display: none;
             flex-direction: column;
             cursor: pointer;
         }
-        .hamburger span {
-            height: 3px;
+        .hamburger div {
             width: 25px;
-            background-color: #ffffff;
+            height: 3px;
+            background-color: #D4AF37;
             margin: 3px 0;
-            transition: 0.3s;
         }
         /* Hero */
         .hero {
-            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
-            color: #ffffff;
-            padding: 100px 0;
+            background-color: #1a1a1a;
+            color: #D4AF37;
             text-align: center;
-            position: relative;
+            padding: 150px 30px 50px;
         }
-        .hero .badge {
+        .badge {
             background-color: #D4AF37;
             color: #1a1a1a;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
+            padding: 10px 20px;
             display: inline-block;
-            margin-bottom: 1rem;
+            margin-bottom: 20px;
+            border-radius: 20px;
         }
         .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 2.5em;
+            margin-bottom: 20px;
         }
         .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
+            font-size: 1.2em;
+            margin-bottom: 30px;
         }
-        .cta-button {
-            background-color: #D4AF37;
-            color: #1a1a1a;
-            padding: 1rem 2rem;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-        .cta-button:hover {
-            background-color: #b8951a;
-        }
+        /* Stats */
         .stats {
-            display: flex;
-            justify-content: center;
-            margin-top: 3rem;
-        }
-        .stat {
-            margin: 0 2rem;
             text-align: center;
         }
+        .stat {
+            display: inline-block;
+            margin: 0 20px;
+        }
         .stat h3 {
-            font-size: 2rem;
+            font-size: 2em;
             color: #D4AF37;
         }
-        /* Sections */
-        section {
-            padding: 80px 0;
-        }
-        .about, .consultas, .areas, .como-funciona, .contato {
-            background-color: #f9f9f9;
-        }
+        /* About */
         .about {
             display: flex;
             align-items: center;
-            justify-content: space-between;
         }
         .about img {
-            width: 300px;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 10px;
+            width: 200px;
+            height: 200px;
+            background-color: #ccc;
+            margin-right: 30px;
+            border-radius: 50%;
         }
-        .cards {
+        /* Consultas */
+        .consultas {
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+        /* Areas */
+        .areas {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: 40px;
         }
         .card {
-            background-color: #ffffff;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            text-align: center;
-            transition: transform 0.3s;
-        }
-        .card:hover {
-            transform: translateY(-10px);
-        }
-        .card i {
-            font-size: 3rem;
+            background-color: #1a1a1a;
             color: #D4AF37;
-            margin-bottom: 1rem;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        /* Como Funciona */
+        .como-funciona {
+            text-align: center;
         }
         .steps {
             display: flex;
@@ -169,35 +165,35 @@
             flex-wrap: wrap;
         }
         .step {
-            text-align: center;
-            margin: 1rem;
-            max-width: 200px;
+            width: 150px;
+            margin: 20px;
         }
-        .step-number {
-            background-color: #D4AF37;
-            color: #1a1a1a;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            margin: 0 auto 1rem;
+        .step h4 {
+            color: #D4AF37;
+        }
+        /* Contato */
+        .contato {
+            background-color: #1a1a1a;
+            color: #D4AF37;
+            text-align: center;
+        }
+        .contato a {
+            color: #D4AF37;
+            text-decoration: none;
         }
         /* Footer */
         footer {
             background-color: #1a1a1a;
-            color: #ffffff;
+            color: #D4AF37;
             text-align: center;
-            padding: 2rem 0;
+            padding: 20px;
         }
-        /* Justice Goddess */
-        .justice-goddess {
+        /* Corners */
+        .corner {
             position: fixed;
             width: 50px;
             height: 50px;
-            opacity: 0.3;
+            opacity: 0.1;
         }
         .top-left {
             top: 10px;
@@ -221,11 +217,11 @@
                 display: none;
                 flex-direction: column;
                 position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
+                top: 60px;
+                right: 0;
                 background-color: #1a1a1a;
-                padding: 1rem 0;
+                width: 200px;
+                padding: 20px;
             }
             .nav-links.active {
                 display: flex;
@@ -234,259 +230,166 @@
                 display: flex;
             }
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2em;
             }
             .about {
                 flex-direction: column;
                 text-align: center;
             }
-            .stats {
+            .steps {
                 flex-direction: column;
-            }
-            .stat {
-                margin: 1rem 0;
-            }
-        }
-        /* Animations */
-        .fade-in {
-            opacity: 0;
-            animation: fadeIn 1s ease-in-out forwards;
-        }
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-            }
-        }
-        .slide-up {
-            transform: translateY(50px);
-            opacity: 0;
-            animation: slideUp 1s ease-in-out forwards;
-        }
-        @keyframes slideUp {
-            to {
-                transform: translateY(0);
-                opacity: 1;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Justice Goddess -->
-    <img src="https://via.placeholder.com/50x50?text=⚖️" alt="Deusa da Justiça" class="justice-goddess top-left">
-    <img src="https://via.placeholder.com/50x50?text=⚖️" alt="Deusa da Justiça" class="justice-goddess top-right">
-    <img src="https://via.placeholder.com/50x50?text=⚖️" alt="Deusa da Justiça" class="justice-goddess bottom-left">
-    <img src="https://via.placeholder.com/50x50?text=⚖️" alt="Deusa da Justiça" class="justice-goddess bottom-right">
+    <!-- Corners -->
+    <img src="justice-goddess.png" alt="Deusa da Justiça" class="corner top-left">
+    <img src="justice-goddess.png" alt="Deusa da Justiça" class="corner top-right">
+    <img src="justice-goddess.png" alt="Deusa da Justiça" class="corner bottom-left">
+    <img src="justice-goddess.png" alt="Deusa da Justiça" class="corner bottom-right">
 
-    <!-- Header -->
     <header>
         <nav class="container">
-            <div class="logo">AM</div>
+            <div class="logo">Dra. Albertina Tibúrcio Mariano</div>
             <ul class="nav-links">
                 <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#consultas">Consultas</a></li>
                 <li><a href="#areas">Áreas</a></li>
-                <li><a href="#como-funciona">Como Funciona</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
             <div class="hamburger" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
         </nav>
     </header>
 
-    <!-- Hero -->
-    <section class="hero" id="hero">
-        <div class="container fade-in">
-            <div class="badge">Advocacia Criminal Especializada</div>
-            <h1>Dra. Albertina Tibúrcio Mariano</h1>
-            <p>Defesa jurídica especializada em direito criminal. Proteja seus direitos com experiência e dedicação.</p>
-            <a href="#contato" class="cta-button">Agende uma Consulta</a>
-            <div class="stats">
-                <div class="stat">
-                    <h3 id="stat1">0</h3>
-                    <p>Casos Vencidos</p>
-                </div>
-                <div class="stat">
-                    <h3 id="stat2">0</h3>
-                    <p>Anos de Experiência</p>
-                </div>
-                <div class="stat">
-                    <h3 id="stat3">0</h3>
-                    <p>Clientes Satisfeitos</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sobre -->
-    <section class="about" id="sobre">
-        <div class="container slide-up">
-            <div>
-                <h2>Sobre a Dra. Albertina</h2>
-                <p>Dra. Albertina Tibúrcio Mariano é uma advogada criminalista dedicada, com anos de experiência em defesa jurídica. Comprometida com a justiça e a proteção dos direitos dos seus clientes.</p>
-            </div>
-            <img src="https://via.placeholder.com/300x300?text=Foto+Dra.+Albertina" alt="Dra. Albertina Tibúrcio Mariano">
-        </div>
-    </section>
-
-    <!-- Consultas Online -->
-    <section class="consultas" id="consultas">
-        <div class="container fade-in">
-            <h2>Consultas Online</h2>
-            <p>Realize consultas via videochamada para maior comodidade. Agende seu horário e receba atendimento personalizado.</p>
-            <a href="#contato" class="cta-button">Agendar Consulta</a>
-        </div>
-    </section>
-
-    <!-- Áreas de Atuação -->
-    <section class="areas" id="areas">
-        <div class="container slide-up">
-            <h2>Áreas de Atuação</h2>
-            <div class="cards">
-                <div class="card">
-                    <i class="fas fa-gavel"></i>
-                    <h3>Defesa Criminal</h3>
-                    <p>Representação em processos criminais.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-balance-scale"></i>
-                    <h3>Direito Penal</h3>
-                    <p>Especialização em leis penais.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Proteção Jurídica</h3>
-                    <p>Defesa contra acusações injustas.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-file-contract"></i>
-                    <h3>Recursos e Apelações</h3>
-                    <p>Preparação de recursos legais.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-users"></i>
-                    <h3>Consultoria Jurídica</h3>
-                    <p>Orientação preventiva.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-handshake"></i>
-                    <h3>Mediação e Acordos</h3>
-                    <p>Negociações para resolução.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Como Funciona -->
-    <section class="como-funciona" id="como-funciona">
-        <div class="container fade-in">
-            <h2>Como Funciona</h2>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Contato Inicial</h3>
-                    <p>Entre em contato para agendar.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Avaliação do Caso</h3>
-                    <p>Análise detalhada da situação.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Estratégia Jurídica</h3>
-                    <p>Definição do plano de ação.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Representação</h3>
-                    <p>Defesa no processo judicial.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">5</div>
-                    <h3>Resolução</h3>
-                    <p>Conclusão e acompanhamento.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contato -->
-    <section class="contato" id="contato">
-        <div class="container slide-up">
-            <h2>Entre em Contato</h2>
-            <p>WhatsApp: (61) 98303-5499</p>
-            <p>Email: albertinamarianoadvocacia@gmail.com</p>
-            <a href="https://wa.me/5561983035499" class="cta-button">Enviar Mensagem</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
+    <section class="hero">
         <div class="container">
-            <p>&copy; 2023 Advocacia Criminal Dra. Albertina Tibúrcio Mariano. Todos os direitos reservados.</p>
+            <div class="badge">Advocacia Criminal Especializada</div>
+            <h1>Defesa Jurídica de Excelência</h1>
+            <p>Proteja seus direitos com a experiência de uma advogada dedicada.</p>
+            <a href="#contato" class="btn">Agende uma Consulta</a>
         </div>
+    </section>
+
+    <section class="stats container">
+        <div class="stat">
+            <h3>500+</h3>
+            <p>Casos Resolvidos</p>
+        </div>
+        <div class="stat">
+            <h3>10+</h3>
+            <p>Anos de Experiência</p>
+        </div>
+        <div class="stat">
+            <h3>98%</h3>
+            <p>Satisfação dos Clientes</p>
+        </div>
+    </section>
+
+    <section id="sobre" class="about container">
+        <img src="placeholder.jpg" alt="Dra. Albertina Tibúrcio Mariano">
+        <div>
+            <h2>Sobre a Dra. Albertina Tibúrcio Mariano</h2>
+            <p>Dra. Albertina Tibúrcio Mariano, OAB 73529 DF, é uma advogada especializada em direito criminal com mais de 10 anos de experiência em Brasília - DF.</p>
+            <p>Comprometida com a justiça e a defesa dos direitos dos seus clientes, ela oferece atendimento personalizado e eficaz.</p>
+        </div>
+    </section>
+
+    <section class="consultas container">
+        <h2>Consultas Online</h2>
+        <p>Realize consultas virtuais de forma prática e segura. Entre em contato via WhatsApp ou email para agendar.</p>
+        <a href="https://wa.me/5561983035499" class="btn">WhatsApp: (61) 98303-5499</a>
+    </section>
+
+    <section id="areas" class="areas container">
+        <h2>Áreas de Atuação</h2>
+        <div class="card">
+            <h3>Direito Penal</h3>
+            <p>Defesa em processos criminais, habeas corpus e recursos.</p>
+        </div>
+        <div class="card">
+            <h3>Tráfico de Drogas</h3>
+            <p>Especializada em casos de tráfico e posse de entorpecentes.</p>
+        </div>
+        <div class="card">
+            <h3>Violência Doméstica</h3>
+            <p>Proteção e defesa em casos de violência familiar.</p>
+        </div>
+        <div class="card">
+            <h3>Homicídio</h3>
+            <p>Defesa em investigações e julgamentos por homicídio.</p>
+        </div>
+        <div class="card">
+            <h3>Estelionato</h3>
+            <p>Combate a fraudes e crimes financeiros.</p>
+        </div>
+        <div class="card">
+            <h3>Outros Crimes</h3>
+            <p>Atendimento em diversos tipos de delitos penais.</p>
+        </div>
+    </section>
+
+    <section class="como-funciona container">
+        <h2>Como Funciona</h2>
+        <div class="steps">
+            <div class="step">
+                <h4>1. Contato</h4>
+                <p>Entre em contato via WhatsApp ou email.</p>
+            </div>
+            <div class="step">
+                <h4>2. Consulta Inicial</h4>
+                <p>Agende uma consulta para discutir seu caso.</p>
+            </div>
+            <div class="step">
+                <h4>3. Análise</h4>
+                <p>Análise detalhada dos fatos e documentos.</p>
+            </div>
+            <div class="step">
+                <h4>4. Estratégia</h4>
+                <p>Definição da melhor estratégia jurídica.</p>
+            </div>
+            <div class="step">
+                <h4>5. Acompanhamento</h4>
+                <p>Acompanhamento até a resolução do caso.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="contato container">
+        <h2>Contato</h2>
+        <p>WhatsApp: <a href="https://wa.me/5561983035499">(61) 98303-5499</a></p>
+        <p>Email: <a href="mailto:albertinamarianoadvocacia@gmail.com">albertinamarianoadvocacia@gmail.com</a></p>
+        <p>Localização: Brasília - DF</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Dra. Albertina Tibúrcio Mariano. Todos os direitos reservados.</p>
     </footer>
 
     <script>
-        // Hamburger Menu
         function toggleMenu() {
             const navLinks = document.querySelector('.nav-links');
             navLinks.classList.toggle('active');
         }
-
-        // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Animated Counters
-        function animateCounter(id, target) {
+        // Simple animation for stats
+        const stats = document.querySelectorAll('.stat h3');
+        stats.forEach(stat => {
+            const target = parseInt(stat.textContent);
             let count = 0;
-            const element = document.getElementById(id);
             const increment = target / 100;
             const timer = setInterval(() => {
                 count += increment;
-                element.textContent = Math.floor(count);
                 if (count >= target) {
-                    element.textContent = target;
+                    stat.textContent = target + (stat.textContent.includes('+') ? '+' : '%');
                     clearInterval(timer);
+                } else {
+                    stat.textContent = Math.floor(count) + (stat.textContent.includes('+') ? '+' : '%');
                 }
             }, 30);
-        }
-
-        // Trigger animations on scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.fade-in, .slide-up').forEach(el => {
-            observer.observe(el);
         });
-
-        // Start counters when hero is visible
-        const heroObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateCounter('stat1', 150);
-                    animateCounter('stat2', 10);
-                    animateCounter('stat3', 500);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        heroObserver.observe(document.querySelector('.hero'));
     </script>
 </body>
 </html>
