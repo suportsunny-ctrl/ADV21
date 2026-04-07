@@ -1,232 +1,324 @@
-<!-- Google Fonts: Playfair Display para títulos, Roboto para corpo --><br/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-<!-- Font Awesome para ícones -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<!-- Link para o arquivo CSS personalizado -->
-<link rel="stylesheet" href="styles.css">
-
-    
-    
-        
-            
-                
-                    <ul class="nav-menu">
-            <li><a href="#home" class="nav-link">Home</a></li>
-            <li><a href="#sobre" class="nav-link">Sobre</a></li>
-            <li><a href="#consultas" class="nav-link">Consultas Online</a></li>
-            <li><a href="#areas" class="nav-link">Áreas de Atuação</a></li>
-            <li><a href="#como-funciona" class="nav-link">Como Funciona</a></li>
-            <li><a href="#contato" class="nav-link">Contato</a></li>
-        </ul>
-
-        <a href="https://wa.me/5561998640893" class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-whatsapp"></i> (61) 99864-0893
-        </a>
-
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dra. Albertina Tibúrcio Mariano - Advocacia Criminal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #1a1a1a;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        header {
+            position: sticky;
+            top: 0;
+            background: #1a1a1a;
+            color: #D4AF37;
+            padding: 1rem;
+            z-index: 1000;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        .nav-links a {
+            color: #D4AF37;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #fff;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background: #D4AF37;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        .hero {
+            background: linear-gradient(to right, #1a1a1a, #333);
+            color: #D4AF37;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+        .hero .badge {
+            background: #D4AF37;
+            color: #1a1a1a;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+        }
+        .justice-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 50px;
+            opacity: 0.5;
+        }
+        .justice-icon.bottom {
+            bottom: 10px;
+            left: 10px;
+        }
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .about {
+            background: #f9f9f9;
+            text-align: center;
+        }
+        .about img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+        .specialties {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .specialty {
+            background: #1a1a1a;
+            color: #D4AF37;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .online-consultation {
+            background: #D4AF37;
+            color: #1a1a1a;
+            text-align: center;
+        }
+        .how-it-works {
+            background: #f9f9f9;
+        }
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .step-number {
+            background: #D4AF37;
+            color: #1a1a1a;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        .pricing {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .plan {
+            background: #1a1a1a;
+            color: #D4AF37;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .contact {
+            background: #D4AF37;
+            color: #1a1a1a;
+            text-align: center;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid #1a1a1a;
+            border-radius: 5px;
+        }
+        button {
+            background: #1a1a1a;
+            color: #D4AF37;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #333;
+        }
+        footer {
+            background: #1a1a1a;
+            color: #D4AF37;
+            text-align: center;
+            padding: 2rem;
+        }
+        .counter {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #1a1a1a;
+                padding: 1rem;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .steps {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Dra. Albertina Tibúrcio Mariano</div>
+            <ul class="nav-links">
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#specialties">Especialidades</a></li>
+                <li><a href="#consultation">Consultas Online</a></li>
+                <li><a href="#how-it-works">Como Funciona</a></li>
+                <li><a href="#pricing">Preços</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </nav>
+    </header>
+    <section class="hero" id="home">
+        <img src="justice-icon.png" alt="Deusa da Justiça" class="justice-icon">
+        <div class="badge">Atendimento 24/7</div>
+        <h1>Advocacia Criminal Especializada</h1>
+        <p>Consultas online via videochamada para presos e familiares.</p>
+        <img src="justice-icon.png" alt="Deusa da Justiça" class="justice-icon bottom">
+    </section>
+    <section class="about" id="about">
+        <h2>Sobre Dra. Albertina Tibúrcio Mariano</h2>
+        <img src="albertina-photo.jpg" alt="Dra. Albertina Tibúrcio Mariano">
+        <p>OAB: 73529 DF</p>
+        <p>Especialista em Direito Criminal, com foco em consultas online para presos. Atuando em Brasília - DF.</p>
+        <p>Contador de alunos: <span class="counter" id="counter">0</span></p>
+    </section>
+    <section class="specialties" id="specialties">
+        <h2>Especialidades</h2>
+        <div class="specialty"><h3>Homicídio</h3><p>Defesa especializada em casos de homicídio.</p></div>
+        <div class="specialty"><h3>Tráfico de Drogas</h3><p>Assistência jurídica em processos de tráfico.</p></div>
+        <div class="specialty"><h3>Roubo e Furto</h3><p>Defesa contra acusações de roubo e furto.</p></div>
+        <div class="specialty"><h3>Violência Doméstica</h3><p>Apoio em casos de violência doméstica.</p></div>
+        <div class="specialty"><h3>Corrupção</h3><p>Especialização em crimes de corrupção.</p></div>
+        <div class="specialty"><h3>Outros Crimes</h3><p>Consultoria em diversos tipos de crimes.</p></div>
+    </section>
+    <section class="online-consultation" id="consultation">
+        <h2>Consultas Online via Videochamada</h2>
+        <p>Agende sua consulta online com a Dra. Albertina.</p>
+        <a href="https://wa.me/5561983035499" class="btn">Agendar no WhatsApp</a>
+    </section>
+    <section class="how-it-works" id="how-it-works">
+        <h2>Como Funciona</h2>
+        <div class="steps">
+            <div class="step"><div class="step-number">1</div><p>Entre em contato via WhatsApp.</p></div>
+            <div class="step"><div class="step-number">2</div><p>Agende a videochamada.</p></div>
+            <div class="step"><div class="step-number">3</div><p>Prepare os documentos.</p></div>
+            <div class="step"><div class="step-number">4</div><p>Realize a consulta online.</p></div>
+            <div class="step"><div class="step-number">5</div><p>Receba orientações jurídicas.</p></div>
         </div>
-    </nav>
-</header>
-
-<!-- HERO SECTION -->
-<section id="home" class="hero">
-    <div class="hero-content container">
-        <div class="hero-badge">⚖️ Advocacia Criminal Especializada</div>
-        <h1>Defesa Jurídica Estratégica<br>e Humanizada</h1>
-        <p class="hero-description">
-            Atuação intransigente na defesa dos direitos e garantias individuais, com foco em resultados e justiça para cada cliente.
-        </p>
-        <div class="hero-buttons">
-            <a href="https://wa.me/5561998640893?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta%20jurídica." class="btn-primary" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-whatsapp"></i> Agendar Consulta
-            </a>
-            <a href="#areas" class="btn-secondary">Nossas Áreas</a>
-        </div>
-        <div class="hero-stats">
-            <div class="stat">
-                <span class="stat-number" data-target="15">0</span><span class="stat-plus">+</span>
-                <span class="stat-label">Anos de Experiência</span>
-            </div>
-            <div class="stat">
-                <span class="stat-number" data-target="500">0</span><span class="stat-plus">+</span>
-                <span class="stat-label">Casos Atendidos</span>
-            </div>
-            <div class="stat">
-                <span class="stat-number" data-target="95">0</span><span class="stat-plus">%</span>
-                <span class="stat-label">Taxa de Sucesso</span>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- SOBRE SECTION -->
-<section id="sobre" class="sobre">
-    <div class="container">
-        <div class="sobre-content">
-            <div class="sobre-text">
-                <h2>Sobre a Dra. Albertina Mariano</h2>
-                <h3>OAB 73529 DF</h3>
-                <p>
-                    Dra. Albertina Tibúrcio Mariano é uma advogada criminalista dedicada à defesa intransigente dos direitos e garantias individuais. Com vasta experiência em casos complexos, sua atuação é pautada pela ética, humanidade e busca incansável pela justiça, especialmente para os mais vulneráveis e injustiçados do sistema penal brasileiro.
-                </p>
-                <p>
-                    Sua missão é oferecer um suporte jurídico de excelência, garantindo que cada cliente receba a atenção e a estratégia necessárias para enfrentar os desafios do processo penal.
-                </p>
-                <ul class="sobre-list">
-                    <li><i class="fas fa-check-circle"></i> Especialista em Direito Penal e Processual Penal</li>
-                    <li><i class="fas fa-check-circle"></i> Atendimento Personalizado e Humanizado</li>
-                    <li><i class="fas fa-check-circle"></i> Atuação em todas as instâncias</li>
-                    <li><i class="fas fa-check-circle"></i> Compromisso com a Justiça e a Ética</li>
-                </ul>
-            </div>
-            <div class="sobre-image">
-                <div class="placeholder-image">
-                    <i class="fas fa-user-tie"></i>
-                    <p>Foto da Dra. Albertina Mariano</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- CONSULTAS ONLINE SECTION -->
-<section id="consultas" class="consultas-online">
-    <div class="container">
-        <h2>Agende Sua Consulta Online</h2>
-        <p>
-            Receba orientação jurídica especializada no conforto da sua casa ou de onde estiver. Nossa equipe está pronta para atendê-lo com discrição e eficiência.
-        </p>
-        <a href="https://wa.me/5561998640893?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta%20online." class="btn-primary" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-whatsapp"></i> Agendar Consulta Online
-        </a>
-    </div>
-</section>
-
-<!-- ÁREAS DE ATUAÇÃO SECTION -->
-<section id="areas" class="areas">
-    <div class="container">
-        <h2>Áreas de Atuação</h2>
-        <div class="areas-grid">
-            <div class="area-item">
-                <i class="fas fa-gavel"></i>
-                <h3>Inquérito Policial</h3>
-                <p>Acompanhamento e defesa desde a fase investigatória.</p>
-            </div>
-            <div class="area-item">
-                <i class="fas fa-user-shield"></i>
-                <h3>Audiência de Custódia</h3>
-                <p>Atuação imediata para garantir os direitos do custodiado.</p>
-            </div>
-            <div class="area-item">
-                <i class="fas fa-balance-scale"></i>
-                <h3>Habeas Corpus</h3>
-                <p>Medida urgente para a liberdade de locomoção.</p>
-            </div>
-            <div class="area-item">
-                <i class="fas fa-users-between-lines"></i>
-                <h3>Tribunal do Júri</h3>
-                <p>Defesa especializada em crimes dolosos contra a vida.</p>
-            </div>
-            <div class="area-item">
-                <i class="fas fa-handcuffs"></i>
-                <h3>Execução Penal</h3>
-                <p>Acompanhamento e defesa dos direitos do sentenciado.</p>
-            </div>
-            <div class="area-item">
-                <i class="fas fa-file-contract"></i>
-                <h3>Defesa em Processos</h3>
-                <p>Atuação completa em todas as fases do processo criminal.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- COMO FUNCIONA SECTION -->
-<section id="como-funciona" class="como-funciona">
-    <div class="container">
-        <h2>Como Funciona Nosso Atendimento</h2>
-        <ol class="passos-list">
-            <li>
-                <div class="passo-icon"><i class="fas fa-phone-volume"></i></div>
-                <h3>Contato Inicial</h3>
-                <p>Entre em contato via WhatsApp ou e-mail para agendar sua primeira conversa.</p>
-            </li>
-            <li>
-                <div class="passo-icon"><i class="fas fa-magnifying-glass"></i></div>
-                <h3>Análise Detalhada</h3>
-                <p>Realizamos uma análise aprofundada do seu caso, coletando todas as informações relevantes.</p>
-            </li>
-            <li>
-                <div class="passo-icon"><i class="fas fa-lightbulb"></i></div>
-                <h3>Estratégia Jurídica</h3>
-                <p>Desenvolvemos uma estratégia jurídica personalizada, focada nos melhores resultados para você.</p>
-            </li>
-            <li>
-                <div class="passo-icon"><i class="fas fa-fist-raised"></i></div>
-                <h3>Atuação Processual</h3>
-                <p>Atuamos com rigor e dedicação em todas as etapas do processo, defendendo seus interesses.</p>
-            </li>
-            <li>
-                <div class="passo-icon"><i class="fas fa-comments"></i></div>
-                <h3>Acompanhamento Contínuo</h3>
-                <p>Mantemos você informado sobre cada avanço do seu caso, com comunicação transparente.</p>
-            </li>
-        </ol>
-    </div>
-</section>
-
-<!-- CONTATO SECTION -->
-<section id="contato" class="contato">
-    <div class="container">
-        <h2>Entre em Contato</h2>
-        <div class="contato-content">
-            <div class="contato-info">
-                <div class="info-item">
-                    <i class="fab fa-whatsapp"></i>
-                    <div>
-                        <h3>WhatsApp</h3>
-                        <p>(61) 99864-0893</p>
-                        <a href="https://wa.me/5561998640893" target="_blank" rel="noopener noreferrer" class="link-contato">Enviar Mensagem</a>
-                    </div>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-envelope"></i>
-                    <div>
-                        <h3>E-mail</h3>
-                        <p>albertinamarianoadvocacia@gmail.com</p>
-                        <a href="mailto:albertinamarianoadvocacia@gmail.com" class="link-contato">Enviar E-mail</a>
-                    </div>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <div>
-                        <h3>Localização</h3>
-                        <p>Brasília - DF</p>
-                        <a href="https://maps.app.goo.gl/SEU_ENDERECO_AQUI" target="_blank" rel="noopener noreferrer" class="link-contato">Ver no Mapa</a>
-                    </div>
-                </div>
-            </div>
-            <div class="contato-cta">
-                <h3>Precisa de Ajuda Urgente?</h3>
-                <p>Nossa equipe está pronta para oferecer o suporte jurídico que você precisa. Não hesite em nos contatar.</p>
-                <a href="https://wa.me/5561998640893?text=Olá!%20Preciso%20de%20ajuda%20jurídica%20urgente." class="btn-primary" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-whatsapp"></i> Fale Conosco Agora
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-    <div class="container">
-        <p>&copy; 2026 Albertina Mariano Advocacia Criminal. Todos os direitos reservados.</p>
-        <p>Desenvolvido com ética e compromisso pela justiça.</p>
-    </div>
-</footer>
-
-<!-- Link para o arquivo JavaScript personalizado -->
-<script src="script.js"></script>
+    </section>
+    <section class="pricing" id="pricing">
+        <h2>Preços</h2>
+        <div class="plan"><h3>Consulta Básica</h3><p>R$ 200</p><p>30 minutos</p></div>
+        <div class="plan"><h3>Consulta Completa</h3><p>R$ 400</p><p>1 hora</p></div>
+        <div class="plan"><h3>Pacote Mensal</h3><p>R$ 1000</p><p>Acompanhamento contínuo</p></div>
+    </section>
+    <section class="contact" id="contact">
+        <h2>Contato</h2>
+        <p>WhatsApp: (61) 98303-5499</p>
+        <p>Email: albertinamarianoadvocacia@gmail.com</p>
+        <form action="#" method="post">
+            <input type="text" name="name" placeholder="Nome" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="message" placeholder="Mensagem" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2023 Dra. Albertina Tibúrcio Mariano. Todos os direitos reservados.</p>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+        function animateCounter() {
+            const counter = document.getElementById('counter');
+            let count = 0;
+            const target = 150; // Example number
+            const interval = setInterval(() => {
+                count++;
+                counter.textContent = count;
+                if (count >= target) clearInterval(interval);
+            }, 10);
+        }
+        window.addEventListener('load', animateCounter);
+    </script>
+</body>
+</html>
